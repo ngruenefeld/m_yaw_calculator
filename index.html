@@ -3,37 +3,50 @@
   <head>
     <meta charset="utf-8">
     <title>m_yaw Calculator</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-    <div>
+    <div class="container">
       <h1>m_yaw Calculator</h1>
 
       <div>
         <h2>Input</h2>
-        <form method="POST">
-          <div>
-            <label for="input-old-myaw">Old m_yaw</label>
-            <input type="number" name="input-old-myaw" id="input-old-myaw" value="0.022">
+        <form method="POST" class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-xs-3" for="input-old-myaw">Old m_yaw</label>
+            <div class="col-xs-9">
+              <input type="number" class="form-control" name="input-old-myaw" id="input-old-myaw" value="0.022">
+            </div>
           </div>
-          <div>
-            <label for="input-old-width">Old Screen Width</label>
-            <input type="number" id="input-old-width" value="16">
+          <div class="form-group">
+            <label class="control-label col-xs-3" for="input-old-width">Old Screen Width</label>
+            <div class="col-xs-9">
+              <input type="number" class="form-control" id="input-old-width" value="16">
+            </div>
           </div>
-          <div>
-            <label for="input-old-height">Old Screen Height</label>
-            <input type="number" id="input-old-height" value="9">
+          <div class="form-group">
+            <label class="control-label col-xs-3" for="input-old-height">Old Screen Height</label>
+            <div class="col-xs-9">
+              <input type="number" class="form-control" id="input-old-height" value="9">
+            </div>
           </div>
-          <div>
-            <label for="input-new-width">New Screen Width</label>
-            <input type="number" id="input-new-width" value="4">
+          <div class="form-group">
+            <label class="control-label col-xs-3" for="input-new-width">New Screen Width</label>
+            <div class="col-xs-9">
+              <input type="number" class="form-control" id="input-new-width" value="4">
+            </div>
           </div>
-          <div>
-            <label for="input-new-height">New Screen Height</label>
-            <input type="number" id="input-new-height" value="3">
+          <div class="form-group">
+            <label class="control-label col-xs-3" for="input-new-height">New Screen Height</label>
+            <div class="col-xs-9">
+              <input type="number" class="form-control" id="input-new-height" value="3">
+            </div>
           </div>
 
-          <div>
-            <input type="submit" onclick="javascript:return calculate();">
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary pull-right col-xs-3" onclick="javascript:return calculate();">
           </div>
         </form>
       </div>
@@ -41,8 +54,9 @@
       <div>
         <h2>Result</h2>
         <div>
-          <span>New m_yaw</span>
-          <span id="result">?</span>
+          <p>
+            New m_yaw: <span id="result">?</span>
+          </p>
         </div>
       </div>
     </div>
