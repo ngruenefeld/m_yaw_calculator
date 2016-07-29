@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>m_yaw Calculator</title>
+  </head>
+  <body>
+    <div>
+      <h1>m_yaw Calculator</h1>
+
+      <div>
+        <h2>Input</h2>
+        <form method="POST">
+          <input type="number" id="input-old-myaw" value="0.022">
+          <input type="number" id="input-old-width" value="16">
+          <input type="number" id="input-old-height" value="9">
+          <input type="number" id="input-new-width" value="4">
+          <input type="number" id="input-new-height" value="3">
+
+          <input type="submit" onclick="javascript:return calculate();">
+        </form>
+      </div>
+
+      <div>
+        <h2>Result</h2>
+        <div>
+          <span id="result"></span>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      (function(document, window) {
+        function inputNumberValue(id) {
+          var el = document.querySelector("#" + id);
+          return el.value;
+        }
+
+        function calculateNewM_yaw(oldM_Yaw, oldScreenWidth, oldScreenHeight, newScreenWidth, newScreenHeight) {
+          // ported and abbreviated from https://gist.github.com/ngruenefeld/e4f47c287cf8f75d182ae2f0cc1f7d6e
+          return oldM_Yaw * ( ( newScreenWidth / newScreenHeight ) / ( oldScreenWidth / oldScreenHeight ) );
+        }
+
+        window.calculate = function() {
+          var oldmyaw = inputNumberValue("input-old-myaw");
+          var oldWidth = inputNumberValue("input-old-width");
+          var oldHeight = inputNumberValue("input-old-height");
+          var newWidth = inputNumberValue("input-new-width");
+          var newHeight = inputNumberValue("input-new-height");
+
+          var newM_yaw = calculateNewM_yaw(oldmyaw, oldWidth, oldHeight, newWidth, newHeight);
+          document.querySelector("#result").innerText = newM_yaw;
+          return false;
+        };
+      })(document, window);
+    </script>
+  </body>
+</html>
