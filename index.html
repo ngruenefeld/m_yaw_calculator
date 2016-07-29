@@ -11,20 +11,38 @@
       <div>
         <h2>Input</h2>
         <form method="POST">
-          <input type="number" id="input-old-myaw" value="0.022">
-          <input type="number" id="input-old-width" value="16">
-          <input type="number" id="input-old-height" value="9">
-          <input type="number" id="input-new-width" value="4">
-          <input type="number" id="input-new-height" value="3">
+          <div>
+            <label for="input-old-myaw">Old m_yaw</label>
+            <input type="number" name="input-old-myaw" id="input-old-myaw" value="0.022">
+          </div>
+          <div>
+            <label for="input-old-width">Old Screen Width</label>
+            <input type="number" id="input-old-width" value="16">
+          </div>
+          <div>
+            <label for="input-old-height">Old Screen Height</label>
+            <input type="number" id="input-old-height" value="9">
+          </div>
+          <div>
+            <label for="input-new-width">New Screen Width</label>
+            <input type="number" id="input-new-width" value="4">
+          </div>
+          <div>
+            <label for="input-new-height">New Screen Height</label>
+            <input type="number" id="input-new-height" value="3">
+          </div>
 
-          <input type="submit" onclick="javascript:return calculate();">
+          <div>
+            <input type="submit" onclick="javascript:return calculate();">
+          </div>
         </form>
       </div>
 
       <div>
         <h2>Result</h2>
         <div>
-          <span id="result"></span>
+          <span>New m_yaw</span>
+          <span id="result">?</span>
         </div>
       </div>
     </div>
