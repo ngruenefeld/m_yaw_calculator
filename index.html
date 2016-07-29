@@ -6,12 +6,18 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- custom styles -->
+    <style type="text/css">
+      #footer {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <h1>m_yaw Calculator</h1>
 
-      <p class="text-muted">
+      <p class="text-info">
         Stretching a resolution on a screen
       </p>
 
@@ -25,13 +31,13 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-xs-3" for="input-old-width">Old Screen Width</label>
+            <label class="control-label col-xs-3" for="input-old-width">Screen Width</label>
             <div class="col-xs-9">
               <input type="number" class="form-control" id="input-old-width" value="16">
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-xs-3" for="input-old-height">Old Screen Height</label>
+            <label class="control-label col-xs-3" for="input-old-height">Screen Height</label>
             <div class="col-xs-9">
               <input type="number" class="form-control" id="input-old-height" value="9">
             </div>
@@ -61,6 +67,17 @@
           <span id="result">?</span>
         </div>
       </div>
+    </div>
+
+    <div id="footer" class="text-muted">
+      <small>
+        <span>
+          Copyright &copy; 2016 <a href="https://github.com/sgade">Sören Gade</a> &amp; <a href="https://github.com/ngruenefeld">Nils Grünefeld</a>
+        </span>
+        <span>
+          (<a href="https://github.com/ngruenefeld/m_yaw_calculator">Source</a>)
+        </span>
+      </small>
     </div>
 
     <script type="text/javascript">
