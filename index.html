@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- custom styles -->
     <style type="text/css">
+      #header,
       #footer {
         text-align: center;
       }
@@ -17,14 +18,15 @@
     <div class="container">
 
       <div id="app">
-        <h1>m_yaw Calculator</h1>
+        <div id="header">
+          <h1>m_yaw Calculator</h1>
 
-        <p class="text-info">
-          Stretching a resolution on a screen
-        </p>
+          <p class="text-info">
+            Stretching a resolution on a screen
+          </p>
+        </div>
 
         <div>
-          <h2>Input</h2>
           <form method="POST" class="form-horizontal">
             <div class="form-group">
               <label class="control-label col-xs-3" for="input-old-myaw">Old m_yaw</label>
@@ -58,16 +60,13 @@
             </div>
 
             <div class="form-group">
+              <label class="control-label col-xs-3">Result</label>
+              <div class="col-xs-6">
+                <input type="number" class="form-control" id="result" disabled="true">
+              </div>
               <input type="submit" class="btn btn-primary pull-right col-xs-3" onclick="javascript:return calculate();">
             </div>
           </form>
-        </div>
-
-        <div>
-          <h2>Result</h2>
-          <div>
-            <span id="result">?</span>
-          </div>
         </div>
       </div>
 
@@ -113,7 +112,7 @@
           var newHeight = inputNumberValue("input-new-height");
 
           var newM_yaw = calculateNewM_yaw(oldmyaw, oldWidth, oldHeight, newWidth, newHeight);
-          document.querySelector("#result").innerText = newM_yaw;
+          document.querySelector("#result").value = newM_yaw;
           return false;
         };
       })(document, window);
